@@ -1,5 +1,5 @@
 {% set name = "atomate2" %}
-{% set version = "0.0.6" %}
+{% set version = "0.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
-  sha256: 5ff0272368087eb128eca03a254d6eedfcd26a442f82d9d601ff1f6ed30aeae5
+  sha256: 660385858fdc182f58fddb3dedf08054b184e4172cc0b35aa528e22b857af6a6
 
 build:
   noarch: python
@@ -17,9 +17,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
-    - setuptools
-    - setuptools_scm
+    - python
   run:
     - click
     - custodian >=2019.8.24
@@ -27,8 +25,8 @@ requirements:
     - monty
     - numpy
     - pydantic
-    - pymatgen >=2019.11.11
-    - python >=3.6
+    - pymatgen >=2022.3.22
+    - python
     - pyyaml
 
 test:
