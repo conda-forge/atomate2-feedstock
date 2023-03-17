@@ -1,5 +1,5 @@
 {% set name = "atomate2" %}
-{% set version = "0.0.9" %}
+{% set version = "0.0.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
-  sha256: e884e480b3f897400001aaf6f6922352d2842c66f959e0acadb07a3587b1ce60
+  sha256: 68b4eb43cc3135988b1b0b7dcd9911b3ce7cc298a918475fa9eaf7cd220cea03
 
 build:
   noarch: python
