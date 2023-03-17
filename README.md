@@ -1,11 +1,11 @@
-About atomate2
-==============
+About atomate2-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/atomate2-feedstock/blob/main/LICENSE.txt)
 
 Home: https://materialsproject.github.io/atomate2/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/atomate2-feedstock/blob/main/LICENSE.txt)
 
 Summary: atomate2 is a library of materials science workflows
 
