@@ -23,7 +23,7 @@ requirements:
   run:
     - click
     - custodian >=2019.8.24
-    - jobflow >=0.1.9
+    - jobflow >=0.1.11
     - monty
     - numpy
     - pydantic
