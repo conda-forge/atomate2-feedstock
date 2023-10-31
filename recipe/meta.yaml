@@ -30,6 +30,7 @@ requirements:
     - pymatgen >=2022.3.22
     - python >=3.6
     - pyyaml
+    - emmet-core
 
 test:
   imports:
