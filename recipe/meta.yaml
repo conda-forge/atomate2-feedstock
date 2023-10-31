@@ -1,5 +1,5 @@
 {% set name = "atomate2" %}
-{% set version = "0.0.11" %}
+{% set version = "0.0.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
-  sha256: 010757e784986dc061a4d4d21c4873f0ca018938bea61267f4c1b0d6e73aa554
+  sha256: 898b0401ae088ca79e56e3575e4f283da523a2eb7fd00aa86b3b3a882ff1d5d8
 
 build:
   noarch: python
@@ -30,6 +30,7 @@ requirements:
     - pymatgen >=2022.3.22
     - python >=3.6
     - pyyaml
+    - emmet-core
 
 test:
   imports:
