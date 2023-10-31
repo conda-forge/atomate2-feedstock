@@ -10,33 +10,38 @@ source:
   sha256: 898b0401ae088ca79e56e3575e4f283da523a2eb7fd00aa86b3b3a882ff1d5d8
 
 build:
+  entry_points:
+    - atm = atomate2.cli:cli
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
+    - python >=3.9
+    - setuptools >=42
+    - versioningit >=1.0,<2.dev0
+    - wheel
     - pip
-    - python >=3.6
-    - setuptools
-    - setuptools_scm
   run:
-    - click
-    - custodian >=2019.8.24
-    - jobflow >=0.1.11
-    - monty
-    - numpy
-    - pydantic
-    - pymatgen >=2022.3.22
-    - python >=3.6
+    - python >=3.9
     - pyyaml
-    - emmet-core
+    - click
+    - custodian >=2023.3.10
+    - emmet-core >=0.70.5
+    - jobflow >=0.1.11
+    - monty >=2023.9.25
+    - numpy
+    - pydantic-settings >=2.0.3
+    - pydantic >=2.0.1
+    - pymatgen >=2023.10.11
 
 test:
   imports:
     - atomate2
   commands:
     - pip check
+    - atm --help
   requires:
     - pip
 
