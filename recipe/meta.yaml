@@ -1,5 +1,5 @@
 {% set name = "atomate2" %}
-{% set version = "0.0.14" %}
+{% set version = "0.0.15" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
-  sha256: 6ecde813d36f970f13a1c62d54b50dabeefe3f319c8ca3ce3c8a643455607a51
+  sha256: 1df652a886e721a54b105af6b49928f7bc3af335f55993a0a4a51d024407a42f
 
 build:
   entry_points:
@@ -27,14 +27,14 @@ requirements:
     - python >=3.9
     - pyyaml
     - click
-    - custodian >=2024.2.15
-    - emmet-core >=0.78.0rc4
+    - custodian >=2024.4.18
+    - emmet-core ==0.82.2
     - jobflow >=0.1.11
-    - monty >=2024.2.2
+    - monty >=2024.7.30
     - numpy
     - pydantic-settings >=2.0.3
     - pydantic >=2.0.1
-    - pymatgen >=2023.12.18
+    - pymatgen >=2024.6.4
 
 test:
   imports:
