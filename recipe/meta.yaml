@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
   sha256: 5da3d78c322574e2f3281efe56da2e194d0e271e3eb13f5f5c9216d5e92ec00c
 
 build:
