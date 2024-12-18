@@ -18,13 +18,13 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=42
     - versioningit >=1.0,<2.dev0
     - wheel
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - pyyaml
     - click
     - custodian >=2024.4.18
@@ -44,6 +44,7 @@ test:
     - atm --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://materialsproject.github.io/atomate2/
