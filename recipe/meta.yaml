@@ -1,13 +1,14 @@
 {% set name = "atomate2" %}
-{% set version = "0.0.17" %}
+{% set version = "0.0.18" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
-  sha256: eacdf09325f1f23805bb68ddfef81a332b750e52ccadaca4bb9d5515d0d43dfb
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
+  sha256: 5da3d78c322574e2f3281efe56da2e194d0e271e3eb13f5f5c9216d5e92ec00c
 
 build:
   entry_points:
@@ -18,23 +19,23 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=42
     - versioningit >=1.0,<2.dev0
     - wheel
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - pyyaml
     - click
     - custodian >=2024.4.18
-    - emmet-core >=0.82.2
+    - emmet-core >=0.84.3rc3
     - jobflow >=0.1.11
     - monty >=2024.7.30
     - numpy
     - pydantic-settings >=2.0.3
     - pydantic >=2.0.1
-    - pymatgen >=2024.6.4
+    - pymatgen >=2024.10.3
 
 test:
   imports:
@@ -44,6 +45,7 @@ test:
     - atm --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://materialsproject.github.io/atomate2/
