@@ -1,5 +1,5 @@
 {% set name = "atomate2" %}
-{% set version = "0.0.19" %}
+{% set version = "0.0.20" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
-  sha256: c19ff34f717904765302d5c99cd5199111c3115b21a4b92d375ddff9264a1ae4
+  sha256: 9ffec5adc5b7c1e8b9589d26b18e37114ecba6ccb6a52550820f6d049be17127
 
 build:
   entry_points:
@@ -32,7 +32,7 @@ requirements:
     - custodian >=2024.4.18
     - emmet-core >=0.84.3rc3
     - jobflow >=0.1.11
-    - monty >=2024.7.30
+    - monty >=2024.12.10
     - numpy
     - pydantic-settings >=2.0.3
     - pydantic >=2.0.1
