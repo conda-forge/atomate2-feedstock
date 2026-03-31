@@ -1,5 +1,5 @@
 {% set name = "atomate2" %}
-{% set version = "0.0.23" %}
+{% set version = "0.1.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/atomate2-{{ version }}.tar.gz
-  sha256: 473294553fa5c9373a32cb536a18df72a6b6725d151c3851119fbf2e0543c2cf
+  sha256: c41cbd4b0183abe2ea03fb7bf24f522c77bc8fa3f3a1c717d4300cb48be8a4ca
 
 build:
   entry_points:
@@ -25,7 +25,7 @@ requirements:
     - wheel
     - pip
   run:
-    - pymongo <=4.10.1
+    - pymongo <=4.16.0
     - python >={{ python_min }}
     - pyyaml
     - click
