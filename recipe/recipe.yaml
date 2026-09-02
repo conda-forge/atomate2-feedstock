@@ -1,0 +1,68 @@
+schema_version: 1
+
+context:
+  name: atomate2
+  version: 0.1.5
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/atomate2-${{ version }}.tar.gz
+  sha256: 4e8e566d07b7b241357e25892c8deb77b33ff01e3c772770fafa27aec1b9f032
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - atm = atomate2.cli:cli
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=42
+    - versioningit >=1.0,<2.dev0
+    - wheel
+    - pip
+  run:
+    - pymongo <=4.16.0
+    - python >=${{ python_min }}
+    - pyyaml
+    - click
+    - custodian >=2024.4.18
+    - emmet-core >=0.86.1
+    - jobflow >=0.1.11
+    - monty >=2024.12.10
+    - numpy
+    - pydantic-settings >=2.0.3
+    - pydantic >=2.0.1
+    - pymatgen >=2024.11.13
+    - maggma >=0.72.0
+
+tests:
+  - python:
+      imports:
+        - atomate2
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - atm --help
+
+about:
+  summary: atomate2 is a library of materials science workflows
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://materialsproject.github.io/atomate2/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
