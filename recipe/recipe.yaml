@@ -2,7 +2,8 @@ schema_version: 1
 
 context:
   name: atomate2
-  version: 0.1.5
+  version: 0.1.6
+  python_min: "3.12"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/atomate2-${{ version }}.tar.gz
-  sha256: 4e8e566d07b7b241357e25892c8deb77b33ff01e3c772770fafa27aec1b9f032
+  sha256: a0b01b969999b9a686250b747698f015cbe310b9dfeb0f9c7b8a6f2db9ec256c
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -28,20 +29,19 @@ requirements:
     - wheel
     - pip
   run:
-    - pymongo <=4.16.0
+    - pymongo <=4.19.0
     - python >=${{ python_min }}
     - pyyaml
     - click
     - custodian >=2024.4.18
-    - emmet-core >=0.86.1
+    - emmet-core >=0.87.3
     - jobflow >=0.1.11
     - monty >=2024.12.10
     - numpy
     - pydantic-settings >=2.0.3
     - pydantic >=2.0.1
     - pymatgen >=2024.11.13
-    - maggma >=0.72.0
-
+    - pymatgen-core >=2026.5.18
 tests:
   - python:
       imports:
@@ -49,7 +49,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}
-        - "*"
+        - '*'
   - requirements:
       run:
         - pip
