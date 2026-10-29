@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: atomate2
-  version: 0.1.6
+  version: "0.1.7"
   python_min: "3.12"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/atomate2-${{ version }}.tar.gz
-  sha256: a0b01b969999b9a686250b747698f015cbe310b9dfeb0f9c7b8a6f2db9ec256c
+  sha256: bb925eeb43b3e3cadc756db564e1e8c2589d014f6960510517a95760d67d8b49
 
 build:
   number: 0
